@@ -1,0 +1,42 @@
+# Git files
+.git
+.gitignore
+.github
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Documentation
+*.md
+docs/
+
+# Node/Frontend (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+.env.local
+
+# Cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+tmp/
+temp/
+
+# Database dumps
+*.sql.gz
+*.sql
+
+# Uploaded files (will be created on startup)
+uploads/
+pdf_uploads/

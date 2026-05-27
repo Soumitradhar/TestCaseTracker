@@ -1,6 +1,14 @@
 -- ============================================================
---  TestFlow Database Schema v3 (with File Reports)
---  phpMyAdmin: Database > Import > Choose this file > Go
+--  TestFlow Database Schema v4 (Production Ready)
+--  Complete schema for TestFlow application
+--
+--  Contains: 5 tables (projects, test_cases, test_runs, reports, pdf_reports)
+--  Seed Data: 6 test cases for 'telemed' project
+--  Character Set: utf8mb4 (supports emojis and special chars)
+--  Engine: InnoDB (foreign keys, transactions)
+--  
+--  Deployment: Import once via phpMyAdmin
+--  Last Updated: 2026-05-27
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS `testflow` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

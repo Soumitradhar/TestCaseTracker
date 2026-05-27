@@ -101,7 +101,12 @@ switch ($method) {
 
         $file         = $_FILES['file'];
         $originalName = basename($file['name']);
-        $mimeType     = mime_content_type($file['tmp_name']);
+        
+        // Use finfo instead of deprecated mime_content_type()
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mimeType = finfo_file($finfo, $file['tmp_name']);
+        finfo_close($finfo);
+        
         $fileSize     = (int)$file['size'];
 
         // Validate type

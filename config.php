@@ -10,11 +10,14 @@ ini_set('display_errors', '0');
 ini_set('log_errors', '1');
 ob_start();
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');        // default XAMPP user
-define('DB_PASS', '');            // default XAMPP password (empty)
-define('DB_NAME', 'testflow');
-define('DB_PORT', 3306);
+// Database configuration with environment variable support
+// For production: set these in your hosting control panel
+// For local development: defaults work with XAMPP
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'testflow');
+define('DB_PORT', (int)getenv('DB_PORT') ?: 3306);
 
 // CORS — allow the HTML file to call this API
 header('Access-Control-Allow-Origin: *');

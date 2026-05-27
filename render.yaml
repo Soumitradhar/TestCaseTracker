@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: testflow-app
+    env: docker
+    plan: free
+    healthCheckPath: /testflow/
+    envVars:
+      # Database Configuration
+      # IMPORTANT: Set these values in Render dashboard BEFORE deploying
+      # Or use values from your MySQL add-on
+      - key: DB_HOST
+        scope: run
+      - key: DB_USER
+        scope: run
+      - key: DB_PASS
+        scope: run
+      - key: DB_NAME
+        scope: run
+        value: testflow
+      - key: DB_PORT
+        scope: run
+        value: 3306

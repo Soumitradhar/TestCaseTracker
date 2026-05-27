@@ -27,7 +27,8 @@ Copy the entire `testflow/` folder into your server root:
 3. Click the `testflow` database → click the **Import** tab
 4. Click **"Choose File"** → select `database.sql` → click **Go**
 5. You should see "Import has been successfully finished"
-> If you already have the database created and only the `pdf_reports` table is missing, import `create_pdf_reports_table.sql` instead.
+
+✅ `database.sql` includes all 5 tables (projects, test_cases, test_runs, reports, pdf_reports) plus seed data.
 ---
 
 ## Step 3 — Configure DB Connection (if needed)
@@ -73,9 +74,9 @@ define('DB_NAME', 'testflow');
 5. Visit `https://yourdomain.com/testflow/index.html`.
 
 ### Important notes
-- Ensure `pdf_uploads/` exists and is writable by the web server.
+- Ensure `pdf_uploads/` and `uploads/` directories exist and are writable by the web server.
 - PHP must be enabled on the host so `api/*.php` can run.
-- If only `pdf_reports` is missing, import `create_pdf_reports_table.sql`.
+- Always import `database.sql` (it contains all required tables with seed data).
 
 ---
 
