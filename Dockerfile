@@ -18,7 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python reportlab library for PDF generation
-RUN pip3 install --no-cache-dir reportlab
+# Debian-based images now block system pip installs unless explicitly allowed.
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install --break-system-packages --no-cache-dir reportlab
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql
