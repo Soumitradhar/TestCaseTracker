@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-dev \
     build-essential \
+    gcc \
+    g++ \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
@@ -23,7 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Use a virtual environment so Debian's externally-managed Python does not block installs.
 RUN python3 -m venv /opt/venv && \
     /opt/venv/bin/pip install --upgrade pip setuptools wheel && \
-    /opt/venv/bin/pip install --no-cache-dir --no-binary :all: reportlab
+    /opt/venv/bin/pip install --no-cache-dir reportlab
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Install PHP extensions
